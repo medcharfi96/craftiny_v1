@@ -4,14 +4,18 @@
 import cmd
 from datetime import datetime
 import models
+from models.Model_Com import BaseModel
 from models.user import User
-from models.base_model import BaseModel
-from models.post import Post
-from models.follow import Follow
-from models.reaction import Reaction
+from models.article import Article
+from models.likes import Likes
+from models.comment import Comment
+from models.product import Products
+from models.tags import Tag
+from models.category import Category
+
 import shlex
 
-classes = {"User": User, "BaseModel": BaseModel, "Post": Post, "Follow": Follow, "Reaction": Reaction}
+classes = {"BaseModel": BaseModel, "User": User, "Article": Article, "Likes": Likes, "Comment": Comment, "Product": Products, "Tags": Tag, "Category": Category}
 
 class CMCommand(cmd.Cmd):
     """ HBNH console """
@@ -50,8 +54,6 @@ class CMCommand(cmd.Cmd):
             else:
                 value = int(value)
             setattr(new_instance, key, value)
-        if classes[all_args[0]] == Follow:
-            new_instance.follow_code = 1
         print(new_instance.id)
         new_instance.save()
 

@@ -6,18 +6,19 @@ class DBStorage
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-'''
-from models.base_model import BaseModel, Base
-from models.user import User
-from models.post import Post
-from models.follow import Follow
-from models.reaction import Reaction
-from models.tokens import Token
-'''
+
 import models
-'''
-classes = {"User": User, "Post": Post, "Follow": Follow, "Reaction": Reaction, "Token": Token}
-'''
+from models.Model_Com import BaseModel, Base
+from models.user import User
+from models.article import Article
+from models.likes import Likes
+from models.comment import Comment
+from models.product import Products
+from models.tags import Tag
+from models.category import Category
+
+classes = {"BaseModel": BaseModel, "User": User, "Article": Article, "Likes": Likes, "Comment": Comment, "Product": Products, "Tags": Tag, "Category": Category}
+
 class DBStorage():
     """DBStorage class"""
     __engine = None

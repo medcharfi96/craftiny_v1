@@ -4,33 +4,36 @@ Creat table Post in db
 """
 
 import models
-from models.Model import BaseModel, Base, DateTime
+from models.Model_Com import BaseModel, Base, DateTime
 import sqlalchemy
 from sqlalchemy import Column, String, ForeignKey, Integer
 from datetime import datetime
 from sqlalchemy.orm import relationship
-from models.reaction import Reaction
+from models.likes import Likes
+from models.category import Category
 
-class Post(BaseModel, Base):
-    """Representation of post"""
-    __tablename__ = 'posts'
+class Article(BaseModel, Base):
+    """Representation of article"""
+    __tablename__ = 'article'
     __table_args__ = {'extend_existing': True}
     user_id = Column(String(60), ForeignKey('user.id'), nullable=False)
-    creation_date = Column(DateTime, nullable=True)
-    post_source = Column(String(20), nullable=True)
-    post_type = Column(String(20), nullable=True)
-    post_text = Column(String(2000), nullable=True)
-    media_url = Column(String(2000), nullable=True)
-    reactions = relationship("Reaction",
+    tag_id = Column(String(60), ForeignKey('tags.id'), nullable=False)
+    date_article = Column(DateTime, nullable=True)
+    title = Column(String(20), nullable=True)
+    description = Column(String(2000), nullable=True)
+    content = Column(String(20), nullable=True)
+    version = Column(String(20), nullable=True)
+    promoted = Column(Integer, nullable=True)
+    category_id = relationship("Category",
                              backref="post",
                              cascade="all, delete, delete-orphan")
 
-    def reactionlist(self):
+    def articalelist(self):
         """
             reacts list
         """
         lt = []
-        for i in models.storage.all(Reaction).values():
+        for i in models.storage.all(Article).values():
             if i.post_id == self.id:
                 lt.append(i)
         return lt

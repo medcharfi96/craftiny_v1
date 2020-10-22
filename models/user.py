@@ -7,11 +7,11 @@ from datetime import datetime
 import models
 from models.Model_Com import BaseModel, Base
 import sqlalchemy
-from sqlalchemy import Column, String, DateTime
+from sqlalchemy import Column, String, DateTime, Integer
 from sqlalchemy.orm import relationship
 from werkzeug.security import generate_password_hash, check_password_hash
-from models.likes import Follow
-from models.article import Post
+from models.likes import Likes
+from models.article import Article
 
 class User(BaseModel, Base):
     """Representation of user"""
