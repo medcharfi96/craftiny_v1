@@ -18,15 +18,19 @@ class Article(BaseModel, Base):
     __table_args__ = {'extend_existing': True}
     user_id = Column(String(60), ForeignKey('user.id'), nullable=False)
     tag_id = Column(String(60), ForeignKey('tags.id'), nullable=False)
+    category_id = Column(String(60), ForeignKey('category.id'), nullable=False)
     date_article = Column(DateTime, nullable=True)
     title = Column(String(20), nullable=True)
     description = Column(String(2000), nullable=True)
     content = Column(String(20), nullable=True)
     version = Column(String(20), nullable=True)
     promoted = Column(Integer, nullable=True)
-    category_id = relationship("Category",
-                             backref="post",
-                             cascade="all, delete, delete-orphan")
+    comment_id = relationship("Comment",
+                              backref="post",
+                              cascade="all, delete, delete-orphan")
+    like_id = relationship("Likes",
+                              backref="post",
+                              cascade="all, delete, delete-orphan")
 
     def articalelist(self):
         """

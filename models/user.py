@@ -11,7 +11,6 @@ from sqlalchemy import Column, String, DateTime, Integer
 from sqlalchemy.orm import relationship
 from werkzeug.security import generate_password_hash, check_password_hash
 from models.likes import Likes
-from models.article import Article
 
 class User(BaseModel, Base):
     """Representation of user"""
@@ -27,6 +26,18 @@ class User(BaseModel, Base):
     typ = Column(Integer, nullable=True, default=0)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow)
+    product_id = relationship("Products",
+                              backref="post",
+                              cascade="all, delete, delete-orphan")
+    article_id = relationship("Article",
+                              backref="get",
+                              cascade="all, delete, delete-orphan")
+    comments_id = relationship("Comment",
+                              backref="get",
+                              cascade="all, delete, delete-orphan")
+    like_id = relationship("Likes",
+                              backref="get",
+                              cascade="all, delete, delete-orphan")
 
     def __init__(self, *args, **kwargs):
         """initializes user"""

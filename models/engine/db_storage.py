@@ -26,10 +26,10 @@ class DBStorage():
 
     def __init__(self):
         """Inisialisation of class DBStorage"""
-        MYSQL_USER = "craft_user"
-        MYSQL_PWD = "1234"
+        MYSQL_USER = "craft_user_v1"
+        MYSQL_PWD = "12345"
         MYSQL_HOST = "localhost"
-        MYSQL_DB = "craftiny"
+        MYSQL_DB = "craftiny_v1"
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
                                       format(MYSQL_USER,
                                              MYSQL_PWD,
