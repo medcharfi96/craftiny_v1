@@ -17,7 +17,7 @@ class Comment(BaseModel, Base):
     __table_args__ = {'extend_existing': True}
     article_id = Column(String(60), ForeignKey('article.id'), nullable=False)
     user_id = Column(String(60), ForeignKey('user.id'), nullable=False)
-    content = Column(String(200), nullable=True)
+    content = Column(String(200), nullable=False)
 
     def __init__(self, *args, **kwargs):
         """initializes user"""

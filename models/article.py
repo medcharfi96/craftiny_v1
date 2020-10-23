@@ -19,17 +19,17 @@ class Article(BaseModel, Base):
     user_id = Column(String(60), ForeignKey('user.id'), nullable=False)
     tag_id = Column(String(60), ForeignKey('tags.id'), nullable=False)
     category_id = Column(String(60), ForeignKey('category.id'), nullable=False)
-    date_article = Column(DateTime, nullable=True)
-    title = Column(String(20), nullable=True)
+    date_article = Column(DateTime, nullable=True, default=datetime.utcnow)
+    title = Column(String(20), nullable=False)
     description = Column(String(2000), nullable=True)
-    content = Column(String(20), nullable=True)
+    content = Column(String(20), nullable=False)
     version = Column(String(20), nullable=True)
     promoted = Column(Integer, nullable=True)
     comment_id = relationship("Comment",
-                              backref="post",
+                              backref="comment",
                               cascade="all, delete, delete-orphan")
     like_id = relationship("Likes",
-                              backref="post",
+                              backref="likes",
                               cascade="all, delete, delete-orphan")
 
     def articalelist(self):

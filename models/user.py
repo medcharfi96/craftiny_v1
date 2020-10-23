@@ -17,26 +17,26 @@ class User(BaseModel, Base):
     __tablename__ = 'user'
     email = Column(String(128), primary_key=False)
     password = Column(String(128), nullable=False)
-    first_name = Column(String(128), nullable=True)
+    first_name = Column(String(128), nullable=False)
     last_name = Column(String(128), nullable=True)
     avatar = Column(String(500), nullable=True)
     token = Column(String(500), nullable=True)
     adress = Column(String(500), nullable=True)
-    phone_number = Column(Integer, nullable=True)
+    phone_number = Column(Integer, nullable=False)
     typ = Column(Integer, nullable=True, default=0)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow)
     product_id = relationship("Products",
-                              backref="post",
+                              backref="product",
                               cascade="all, delete, delete-orphan")
     article_id = relationship("Article",
-                              backref="get",
+                              backref="article",
                               cascade="all, delete, delete-orphan")
     comments_id = relationship("Comment",
-                              backref="get",
+                              backref="comment",
                               cascade="all, delete, delete-orphan")
     like_id = relationship("Likes",
-                              backref="get",
+                              backref="likes",
                               cascade="all, delete, delete-orphan")
 
     def __init__(self, *args, **kwargs):
