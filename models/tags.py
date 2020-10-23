@@ -8,7 +8,7 @@ from models.Model_Com import BaseModel, Base, String
 import sqlalchemy
 from sqlalchemy import Column, String
 
-class Tag(Base, BaseModel):
+class Tag(BaseModel, Base):
 	"""Representation of tags"""
 	__tablename__ = 'tags'
 	__table_args__ = {'extend_existing': True}

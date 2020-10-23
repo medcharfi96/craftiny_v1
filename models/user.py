@@ -15,11 +15,11 @@ from models.likes import Likes
 class User(BaseModel, Base):
     """Representation of user"""
     __tablename__ = 'user'
-    email = Column(String(128), primary_key=True)
+    email = Column(String(128), primary_key=False)
     password = Column(String(128), nullable=False)
-    first_name = Column(String(128), nullable=False)
-    last_name = Column(String(128), nullable=False)
-    avatar = Column(String(500), nullable=False)
+    first_name = Column(String(128), nullable=True)
+    last_name = Column(String(128), nullable=True)
+    avatar = Column(String(500), nullable=True)
     token = Column(String(500), nullable=True)
     adress = Column(String(500), nullable=True)
     phone_number = Column(Integer, nullable=True)
