@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Creat table reaction in db
+table of comments
 """
 
 import models
@@ -20,5 +20,6 @@ class Comment(BaseModel, Base):
     content = Column(String(200), nullable=False)
 
     def __init__(self, *args, **kwargs):
-        """initializes user"""
+        """initializes comment"""
         super().__init__(*args, **kwargs)
+
