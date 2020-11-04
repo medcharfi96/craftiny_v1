@@ -12,3 +12,4 @@ This directory contains Flask web applications for a RESTful API
     - [product.py](v1/views/product.py) contains the view for Product objects
     - [tags.py](v1/views/tags.py) contains the view for Tag objects
     - [users.py](v1/views/users.py) contains the view for User objects
+  
