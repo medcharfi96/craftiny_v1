@@ -1,5 +1,5 @@
 # Portfolio project : Craftiny - Nothing vanishes, Everything transforme
-<img width=50% src="https://i.imgur.com/hbAL2UE.png">
+<img width=50% position = centre src="https://i.imgur.com/hbAL2UE.png">
 
 # TABLE OF CONTENT
 ___
