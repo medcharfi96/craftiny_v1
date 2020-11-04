@@ -1,4 +1,4 @@
--- prepares a MySQL server for the CrossMe project
+-- prepares a MySQL server for the craftiiny project
 
 CREATE DATABASE IF NOT EXISTS craftiny_v1;
 CREATE USER IF NOT EXISTS 'craft_user_v1'@'localhost' IDENTIFIED BY '12345';
