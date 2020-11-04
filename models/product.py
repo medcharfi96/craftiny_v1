@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Creat table Post in db
+Creat table product in db
 """
 
 import models
@@ -26,7 +26,7 @@ class Products(BaseModel, Base):
 
     def productlist(self):
         """
-            reacts list
+            product list
         """
         lt = []
         for i in models.storage.all(Article).values():
@@ -36,7 +36,7 @@ class Products(BaseModel, Base):
 
     def reaction_list_source_user_id(self):
         """
-            user who reacted this post
+            list reaction of product
         """
         rect_list = self.reactionlist()
         source_list = []
@@ -45,22 +45,12 @@ class Products(BaseModel, Base):
         return source_list
 
     def number_of_reaction(self):
-        """get the number of reaction of a post"""
+        """get the number of reaction of a prodcut"""
         react_list = self.reactionlist()
         num_of_react = len(react_list)
         return (str(num_of_react))
 
-    def check_if_user_reacted(self, follower_id):
-        """
-        check if a user is already react on a post
-        """
-        reactor_list = self.reaction_list_source_user_id()
-        for id in reactor_list:
-            if id == follower_id:
-                return True
-        return False
-
 
     def __init__(self, *args, **kwargs):
-        """initializes user"""
+        """initializes product"""
         super().__init__(*args, **kwargs)
