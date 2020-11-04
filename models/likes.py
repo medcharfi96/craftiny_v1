@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Creat table reaction in db
+Creat table like in db
 """
 
 import models
@@ -18,5 +18,5 @@ class Likes(BaseModel, Base):
     user_id = Column(String(60), ForeignKey('user.id'), nullable=False)
 
     def __init__(self, *args, **kwargs):
-        """initializes user"""
+        """initializes like"""
         super().__init__(*args, **kwargs)
