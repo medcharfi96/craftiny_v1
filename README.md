@@ -27,7 +27,7 @@ ___
 
 - **Mouhamed Charfi : Backend developer :** Mouhamed worked on the backend part considering he has a good background in it and has worked on similar projects before. It’ll allow him to improve his skills and use what she has learned until now.
 
-- **Youssef Sahli : Backend developer :** Youssef is good with frameworks like flask and Django since she did previous projects working on them, therefore she worked on the backend side of the project.
+- **Youssef Sahli : Backend developer :** Youssef is good with frameworks like flask and Django since he did previous projects working on them, therefore he worked on the backend side of the project.
 
 # install of  Craftiny
 ___
