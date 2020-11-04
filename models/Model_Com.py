@@ -21,7 +21,7 @@ class BaseModel:
         self.id = uuid.uuid4()
 
     def save(self):
-        """updates the attribute 'updated_at' with the current datetime"""
+        """updates the attribute """
         models.storage.new(self)
         models.storage.save()
 
