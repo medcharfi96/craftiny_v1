@@ -49,7 +49,7 @@ class DBStorage():
         return (new_dict)
 
     def check(self, cls=None, email="str"):
-        """check"""
+        """check the user connected """
         val_list = self.__session.query(cls).all()
         for user in val_list:
             if email == user.email:
@@ -62,11 +62,11 @@ class DBStorage():
         self.__session.add(obj)
 
     def save(self):
-        """commit all changes of the current database session"""
+        """save all changes of the current database session"""
         self.__session.commit()
 
     def delete(self, obj=None):
-        """delete from the current database session obj if not None"""
+        """delete from the current database session"""
         if obj:
             self.__session.delete(obj)
 
@@ -79,13 +79,12 @@ class DBStorage():
         self.__session = Session()
 
     def close(self):
-        """close methode"""
+        """close session methode"""
         self.__session.close()
 
     def get(self, cls, id):
         """
-        Returns the object based on the class name and its ID, or
-        None if not found
+        REturn object from class name
         """
         if cls not in classes.values():
             return None
@@ -125,8 +124,7 @@ class DBStorage():
 
     def getbyemail(self, cls, email):
         """
-        Returns the object based on the class name and its ID, or
-        None if not found
+        Return user by email
         """
         if cls not in classes.values():
             return None
@@ -138,47 +136,10 @@ class DBStorage():
 
         return None
 
-    def get_by_followed_id(self, cls, user_id):
-        """
-        get a list of cls id with followed
-        """
-        if cls not in classes.values():
-            return None
-        all_cls = models.storage.all(cls)
-        obj_list = []
-        for value in all_cls.values():
-            if value.user_id == user_id:
-                obj_list.append(value)
-        return obj_list
+    def craft_nbr(self, cls, user_id):
+        """count number of craft"""
 
-    def get_by_follower_id(self, cls, follower_id):
-        """
-        get a list of user follow
-        """
-        if cls not in classes.values():
-            return None
-        all_cls = models.storage.all(cls)
-        obj_list = []
-        for value in all_cls.values():
-            if value.follower_id == follower_id:
-                obj_list.append(value)
-        return obj_list
 
-    def get_by_two(self, cls, follower, followed):
-        """get follow instance with the two ids"""
-        if cls not in classes.values():
-            return None
-
-        if follower is not None and followed is not None:
-            follow_list = models.storage.get_by_followed_id(cls, followed)
-            print (follow_list)
-            for obj in follow_list:
-                if obj.follower_id == follower:
-                    return obj
-        return None
-
-    def follower_number(self, cls, user_id):
-        """count a user followers"""
         if cls not in classes.values():
             return None
 
@@ -206,7 +167,7 @@ class DBStorage():
 
     def getlist_by_attr(self, cls, user_id, follower_id=None):
         """
-        get all posts of a user by user_id
+        get all craft by user id
         """
         if cls not in classes.values():
             return None
@@ -234,22 +195,8 @@ class DBStorage():
 
 
     def sort_posts(self, post_lists):
-        """sort a list of post by creation date"""
+        """sort a list of craft by creation date"""
         my_new_list = post_lists
         my_new_list.sort(key=lambda date: date["creation_date"])
         my_new_list.reverse()
         return my_new_list
-
-    def get_react(self, cls, post_id, user_id):
-        """
-        get reaction obj
-        """
-        if cls not in classes.values():
-            return None
-
-        all_cls = models.storage.all(cls)
-        for value in all_cls.values():
-            if value.post_id == post_id:
-                if user_id == value.source_user_id:
-                    return value
-        return None
