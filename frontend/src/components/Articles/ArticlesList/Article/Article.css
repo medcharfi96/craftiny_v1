@@ -1,0 +1,17 @@
+.container {
+    padding: 0 1rem;
+    margin-top: .2rem;
+}
+
+.heartComment {
+    align-content: space-between;
+    font-size: 1.1rem;
+    margin-top: .5rem;
+}
+
+.Infos {
+    margin-top: .7rem;
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 14px;
+    text-align: left;
+}

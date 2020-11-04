@@ -1,0 +1,23 @@
+@import '~antd/dist/antd.css';
+.App {
+    text-align: center;
+    color: black;
+}
+
+.Content {
+    margin-top: 1rem;
+    background-color: white;
+    /* padding: 0 20rem ; */
+}
+
+.site-layout-content {
+    width: 60%;
+    margin: auto;
+}
+
+.ant-layout {
+    background-color: white;
+}
+
+
+/* dfafe */

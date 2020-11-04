@@ -1,0 +1,27 @@
+.ck-editor__editable {
+    height: 30rem;
+    font-size: large;
+}
+
+.HeaderField {
+    margin-bottom: 4rem;
+    margin: auto !important;
+}
+
+.SaveBtn {
+    border: none;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background-color: #52c41a;
+    font-size: x-large;
+    height: 3rem;
+    width: 6rem;
+}
+
+.TagSelect {
+    width: 5rem;
+}
+
+.Selects {
+    margin-top: 1rem;
+}
