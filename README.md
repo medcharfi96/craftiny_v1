@@ -1,11 +1,11 @@
 # Portfolio project : Craftiny - Nothing vanishes, Everything transforme
-
-[logo](https://imgur.com/a/Boszkdh)
+<img width=50% src="https://imgur.com/a/Boszkdh">
 
 # TABLE OF CONTENT
 ___
   - **Introduction**
   - **Team**
+  - **the story**
   - **install**
   - **Technologies**
   - **Usage**
@@ -28,13 +28,22 @@ ___
 - **Mouhamed Charfi : Backend developer :** Mouhamed worked on the backend part considering he has a good background in it and has worked on similar projects before. It’ll allow him to improve his skills and use what she has learned until now.
 
 - **Youssef Sahli : Backend developer :** Youssef is good with frameworks like flask and Django since he did previous projects working on them, therefore he worked on the backend side of the project.
+# The story
+___
+
+Since he has moved to his new house, mouhamed has tried to decorate this house according to his taste through little things he does to his liking.
+after a long search he failed to find crafts with a tutorial.
+Based on this story and discussing the main idea of ​​our holberton school protfolio project, we decided to make this idea happen so that others who are good at DIY find a way to share their ideas.
+
 
 # install of  Craftiny
 ___
-**install command in setup_mysql.sql** 
-**Run the server**
-**Enjoy searching**
-website :  https://imgur.com/a/LiLxBft
+- **install command in setup_mysql.sql** 
+- **Run the server**
+- **Enjoy searching**
+- <img width=50% src="https://imgur.com/a/LiLxBft">
+- <img width=50% src="https://imgur.com/a/C2tUTMT">
+- <img width=50% src="https://imgur.com/a/Ou0FJ0S">
 # Technologies
 ----
 # Frontend technologies
