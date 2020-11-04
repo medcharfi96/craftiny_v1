@@ -44,35 +44,24 @@ class User(BaseModel, Base):
         super().__init__(*args, **kwargs)
 
     def hashpwd(self, pwd):
+		""" hash coding password"""
         return generate_password_hash(pwd)
 
 
     def verify_password(self, pwd, hash):
+		""" password verification"""
         return check_password_hash(hash, pwd)
 
     def as_dict(self):
+		""" to disct without password"""
        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
     def as_dict_nopwd(self):
+		""" to disct without password"""
         a={c.name: getattr(self, c.name) for c in self.__table__.columns}
         a.pop('password', None)
         return a
-'''
-    def follower_list(self):
-        """get follower list of a user"""
-        follow_list_obj = models.storage.get_by_followed_id(Follow, self.id)
-        follow_list = []
-        for obj in follow_list_obj:
-            follow_list.append(obj.follower_id)
-        return follow_list
 
-    def follow_list(self):
-        """get list of user follow"""
-        follow_list_obj = models.storage.get_by_follower_id(Follow, self.id)
-        follow_list = []
-        for obj in follow_list_obj:
-            follow_list.append(obj.user_id)
-        return follow_list
 
     def post_list(self):
         """get post list of a user"""
@@ -80,4 +69,3 @@ class User(BaseModel, Base):
         post_list = []
         for obj in post_list:
             post_list.append(obj)
-'''
