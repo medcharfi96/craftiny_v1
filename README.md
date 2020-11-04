@@ -2,7 +2,7 @@
 
 [logo](https://imgur.com/a/Boszkdh)
 
-# TABLE OF CONTENTS
+# TABLE OF CONTENT
 ___
   - **Introduction**
   - **Team**
