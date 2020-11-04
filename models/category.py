@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+category class
 """
 
 import models
@@ -23,5 +23,5 @@ class Category(BaseModel, Base):
 							   cascade="all, delete, delete-orphan")
 
 	def __init__(self, *args, **kwargs):
-		"""initializes user"""
+		"""initializes category"""
 		super().__init__(*args, **kwargs)
