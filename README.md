@@ -1,5 +1,5 @@
 # Portfolio project : Craftiny - Nothing vanishes, Everything transforme
-<img width=50% src="https://i.imgur.com/IOfZcB8.png">
+<img width=50% src="https://i.imgur.com/d0V7ZwY.png">
 
 # TABLE OF CONTENT
 ___
@@ -41,9 +41,9 @@ ___
 - **install command in setup_mysql.sql** 
 - **Run the server**
 - **Enjoy searching**
-- <img width=50% src="https://imgur.com/a/LiLxBft">
-- <img width=50% src="https://imgur.com/a/C2tUTMT">
-- <img width=50% src="https://imgur.com/a/Ou0FJ0S">
+- <img width=50% src="https://i.imgur.com/xbYKcPz.png">
+- <img width=50% src="https://i.imgur.com/IOfZcB8.png">
+- <img width=50% src="https://i.imgur.com/nXxwTqD.png">
 # Technologies
 ----
 # Frontend technologies
