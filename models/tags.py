@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+add tag tag table to db
 """
 
 import models
@@ -15,5 +15,5 @@ class Tag(BaseModel, Base):
 	label = Column(String(20), nullable=True)
 
 	def __init__(self, *args, **kwargs):
-		"""initializes user"""
+		"""initializes tags"""
 		super().__init__(*args, **kwargs)
